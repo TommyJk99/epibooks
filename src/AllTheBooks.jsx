@@ -23,8 +23,10 @@ const AllTheBooks = () => {
   return (
     <>
       <Form.Group className="mb-4 w-50 mx-auto" controlId="exampleForm.ControlInput1">
-        <Form.Label className="text-center d-block">Cerca il tuo libro!</Form.Label>
-        <Form.Control type="search" placeholder="HalfLife" value={input} onChange={handleInput} />
+        <Form.Label style={{ color: " hsl(198, 100%, 42%)" }} className="text-center d-block fs-5">
+          <strong>Cerca il tuo libro!</strong>
+        </Form.Label>
+        <Form.Control className="mb-4" type="search" placeholder="HalfLife" value={input} onChange={handleInput} />
       </Form.Group>
 
       <Container>

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
 const Welcome = () => {
+  //hook per manipolare il DOM direttamente
+  //ho aggiunto un timer al pop-up per permettere il caricamento della pagina
   useEffect(() => {
     document.title = "Epibooks";
     const timer = setTimeout(() => {
@@ -12,8 +14,7 @@ const Welcome = () => {
   return (
     <div>
       <br />
-      <h3>Benvenuto!</h3>
-      <br />
+      <h3>📖 Benvenuto 📖</h3>
     </div>
   );
 };
