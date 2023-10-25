@@ -1,0 +1,11 @@
+.image-container {
+  height: 350px; /* Imposta l'altezza che preferisci */
+  width: 100%; /* Farà in modo che il contenitore si adatti alla larghezza della colonna */
+  overflow: hidden; /* Assicura che le immagini più grandi siano tagliate piuttosto che fuoriuscire */
+}
+
+.custom-img {
+  max-height: 100%; /* Impedisce che l'immagine fuoriesca verticalmente */
+  max-width: 100%; /* Impedisce che l'immagine fuoriesca orizzontalmente */
+  object-fit: cover; /* Mantiene le proporzioni dell'immagine evitando che si distorca. */
+}

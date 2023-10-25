@@ -8,3 +8,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.footer {
+  /* position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); */
+  font-size: 0.8rem;
+}
+
+h3 {
+  text-align: center;
+}

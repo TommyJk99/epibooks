@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container className="footer mx-auto">
       <hr />
       <Row>
         <Col className="d-flex flex-column justify-content-center align-items-center">
