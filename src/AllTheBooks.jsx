@@ -1,6 +1,5 @@
 import { Col, Row, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import fantasyBooks from "./json/fantasy.json";
 import historyBooks from "./json/history.json";
 import horrorBooks from "./json/horror.json";
@@ -13,7 +12,15 @@ const AllTheBooks = () => {
   const allBooks = [...fantasyBooks, ...historyBooks, ...horrorBooks, ...romanceBooks, ...scifiBooks];
   //qui salvo lo stato cosi da aggiornare allTheBooks ogni volta che inserisco un carattere
   const [input, setInput] = useState("");
+  const [selectedBook, setSelectedBook] = useState(null);
 
+  const handleBookSelect = (book) => {
+    if (selectedBook === book) {
+      setSelectedBook(null); // deseleziona se è lo stesso libro
+    } else {
+      setSelectedBook(book); // seleziona il nuovo libro
+    }
+  };
   const handleInput = (e) => {
     setInput(e.target.value);
   };
@@ -26,14 +33,14 @@ const AllTheBooks = () => {
         <Form.Label style={{ color: " hsl(198, 100%, 42%)" }} className="text-center d-block fs-5">
           <strong>Cerca il tuo libro!</strong>
         </Form.Label>
-        <Form.Control className="mb-4" type="search" placeholder="HalfLife" value={input} onChange={handleInput} />
+        <Form.Control className="mb-4" type="search" placeholder="...digita qualcosa" value={input} onChange={handleInput} />
       </Form.Group>
 
       <Container>
         <Row>
           {filterBooks.map((book) => (
             <Col key={book.id} sm={12} md={6} lg={3} className="mb-4 d-flex justify-content-center">
-              <SingleBook book={book} />
+              <SingleBook book={book} isSelected={selectedBook === book} onSelect={() => handleBookSelect(book)} />
             </Col>
           ))}
         </Row>
